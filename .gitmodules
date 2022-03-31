@@ -1,0 +1,6 @@
+[submodule "src/BackEnd"]
+	path = src/BackEnd
+	url = https://github.com/Rainlv/DeepGIS-BackEnd.git
+[submodule "src/FrontEnd"]
+	path = src/FrontEnd
+	url = https://github.com/Rainlv/DeepGIS-FrontEnd.git
