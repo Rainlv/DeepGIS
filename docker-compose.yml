@@ -70,10 +70,13 @@ services:
 
   deepgis:
     restart: always
-#    image: deepgis:0.1.1
+    image: deepgis:0.1.2
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        VUE_APP_BASE_API: http://${SERVER_HOST}:${BACKEND_PORT}
+        VUE_APP_BASE_GEOSERVER_URL: http://${SERVER_HOST}:${GEOSERVER_ADMIN_PORT}
     container_name: DeepGIS
     ports:
       - ${BACKEND_PORT}:8010
