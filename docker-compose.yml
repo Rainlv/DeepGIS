@@ -65,6 +65,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      TZ: Asia/Shanghai
+
     depends_on:
       - postgis
 
@@ -88,11 +90,16 @@ services:
       - ${DOCKER_SOCK_PATH}:/var/run/docker.sock
       - ${DOCKER_BIN_PATH}:/usr/bin/docker
     environment:
+      TZ: Asia/Shanghai
+
       port: 8010
+      server_host: ${SERVER_HOST}
+
       postgis_db_host: postgis
       postgis_db_port: 5432
       postgis_db_user: ${POSTGRES_USER}
       postgis_db_passwd: ${GEOSERVER_ADMIN_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
 
       geoserver_url: http://geoserver:8080/geoserver
       geoserver_user: ${GEOSERVER_ADMIN_USER}
