@@ -110,6 +110,19 @@ services:
 
       VUE_APP_BASE_API: http://${SERVER_HOST}:${BACKEND_PORT}
       VUE_APP_BASE_GEOSERVER_URL: http://${SERVER_HOST}:${GEOSERVER_ADMIN_PORT}
+
+  # TODO: JUST build the image but don't start it
+  code_server:
+    restart: always
+    image: deepgis_codeserver:0.1.2
+    build:
+      context: .
+      dockerfile: Dockerfile-CodeServer
+    container_name: deepgis_code_server
+    environment:
+      TZ: Asia/Shanghai
+
+
 networks:
   default:
     driver: bridge

@@ -1,0 +1,15 @@
+FROM codercom/code-server
+USER root
+RUN apt-get update \
+    && apt-get install -y python3-dev python3-pip \
+    && pip3 install --upgrade pip --user \
+    && apt-get install -y libpq-dev \
+    && pip3 install deepgis-utils \
+    && apt-get install -y python3-gdal\
+    && apt-get clean \
+    && apt-get auto-remove -y \
+    && rm -rf /var/cache/apt/* \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /tmp/*
+
+RUN ln -s /usr/bin/python3 /usr/bin/python
