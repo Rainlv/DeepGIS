@@ -53,8 +53,8 @@ services:
     depends_on:
       - postgis
     volumes:
-      - ~/DeepGIS/geoserver/data:/var/lib/geoserver_data
-      - ~/DeepGIS/geoserver/settings:/settings
+      - ${GEOSERVER_VOLUME_DIR}/data:/var/lib/geoserver_data
+      - ${GEOSERVER_VOLUME_DIR}/settings:/settings
 
   pgadmin4:
     restart: always
@@ -104,7 +104,7 @@ services:
       geoserver_url: http://geoserver:8080/geoserver
       geoserver_user: ${GEOSERVER_ADMIN_USER}
       geoserver_passwd: ${GEOSERVER_ADMIN_PASSWORD}
-
+      geoserver_data_dir: ${GEOSERVER_VOLUME_DIR}/data
       DOCKER_BASE_URL: tcp://${DOCKER_HOST}:${DOCKER_PORT}
       DOCKER_CODE_SERVER_DIR: ${HOME}/code_server/
 
