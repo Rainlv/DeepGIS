@@ -33,6 +33,10 @@ docker-compose up
 > SERVER_HOST和FRONTEND_PORT等为.env文件中的配置项
 相关配置可以参考`.env`文件
 
+## Demo
+
+![720](http://qiniu.rainna.xyz/720.gif)
+
 ## Author
 
 👤 **Rainnalv**
