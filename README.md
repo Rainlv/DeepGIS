@@ -35,7 +35,7 @@ docker-compose up
 
 ## Demo
 
-![720](http://qiniu.rainna.xyz/720.gif)
+<video src="http://qiniu.rainna.xyz/%E7%AD%94%E8%BE%A9720.mp4"></video>
 
 ## Author
 
